@@ -1,0 +1,15 @@
+FROM postgres
+ENV POSTGRES_USER postgres
+ENV POSTGRES_PASSWORD postgres
+ENV POSTGRES_DB postgres
+ENV AGE 30
+ENV NAME aboba
+ENV HOBBY aboba
+RUN service postgresql restart
+RUN apt-get update
+RUN apt-get install -y python3 python3-pip
+RUN pip3 install psycopg2-binary Flask
+WORKDIR /app
+COPY ./app.py /app
+COPY init.sql /docker-entrypoint-initdb.d/
+CMD ["postgres"]
