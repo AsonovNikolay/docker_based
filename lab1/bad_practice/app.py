@@ -49,7 +49,7 @@ def test():
 @app.route('/add_data', methods=['POST'])
 def add_data():
     data = request.get_json()
-    insert_data_to_db((data['column1'], data['column2'], data['column3']))
+    insert_data_to_db((int(data['column1']), data['column2'], data['column3']))
     return "Data added successfully", 200
 
 if __name__ == '__main__':
