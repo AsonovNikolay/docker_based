@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  database:
+    build:
+      context: .
+      dockerfile: Good_Database
+    container_name: Good_Database
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+  web_app:
+    build:
+      context: .
+      dockerfile: Good_WebApp
+    container_name: Good_WebApp
+    ports:
+      - '1111:1111'
