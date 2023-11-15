@@ -1,6 +1,4 @@
-minikube enable  
-minikube addons enable ingress  
-
+Запустить поды
 kubectl apply -f web_app/deployment.yaml  
 kubectl apply -f web_app/service.yaml  
 kubectl port-forward service/product-service 8081:80  
