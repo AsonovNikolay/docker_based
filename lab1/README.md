@@ -10,6 +10,6 @@ Year: 2023/2024
 
 Group: K34212
 
-Authors: Asonov Nikolay, Titenko Elena, Glebov Ivan, Gomzyakov Alexsander
+Authors: Asonov Nikolay, Titenko Elena, Glebov Ivan, Gomzyakov Alexandеr
 
 Lab: Lab1
