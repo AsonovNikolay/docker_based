@@ -1,4 +1,4 @@
-Запустить поды
+Запустить поды  
 kubectl apply -f web_app/deployment.yaml  
 kubectl apply -f web_app/service.yaml  
 kubectl port-forward service/product-service 8081:80  
@@ -13,4 +13,4 @@ Service используем для сетевых настроек прилож
 Файлы можно конечно объеденить и запускать одной командой, но в целом не критично  
 
 Проверить работоспособность  
-curl 127.0.0.1:8081
+curl 127.0.0.1:8081  
