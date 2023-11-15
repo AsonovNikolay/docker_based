@@ -3,7 +3,7 @@ minikube addons enable ingress
 
 kubectl apply -f web_app/deployment.yaml  
 kubectl apply -f web_app/service.yaml  
-kubectl port-forward service/product-service 8080:80  
+kubectl port-forward service/product-service 8081:80  
 
 
 Deployment используем для управления подами
@@ -12,4 +12,7 @@ Service используем для сетевых настроек прилож
 
 Это без звездочки  
 
-Файлы можно конечно объеденить и запускать одной командой, но в целом не критично
+Файлы можно конечно объеденить и запускать одной командой, но в целом не критично  
+
+Проверить работоспособность
+curl 127.0.0.1:8081
