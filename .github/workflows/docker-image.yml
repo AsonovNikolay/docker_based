@@ -1,18 +1,31 @@
-name: Docker Image CI
+name: Auto_push_docker_image
 
 on:
-  push:
+  push: #сценарий должен запускать при пуше в ветку main
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    paths:  #директории и файлы в которых должны появиться изменения
+      - "lab3/bot/**"
+      - ".github/workflows/docker-image.yml"
 
 jobs:
+  build_and_run:
 
-  build:
+    runs-on: ubuntu-22.04 #образ который используется для выполнения команд
 
-    runs-on: ubuntu-latest
+    steps: #шаги для выполнения сценария
+    - name: checkout_rep #для клонирования репозитория в рабочее пространство
+      uses: actions/checkout@v4
 
-    steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+    - name: Log_in_DockerHub #авторизация в систему DockerHub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }} #логин для авторизации в DockerHub
+        password: ${{ secrets.DOCKER_PASSWORD }} #пароль для авторизации в DockerHub
+
+
+    - name: Build_and_push_docker_image #сборка и пуш в DockerHub
+      uses: docker/build-push-action@v5
+      with:
+        context: "./lab3" #расположение файла для сборки Docker-образа
+        push: true
+        tags: fiji6479/ip-get:1.0 #Название и версия образа на DockerHub
