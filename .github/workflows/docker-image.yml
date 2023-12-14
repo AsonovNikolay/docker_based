@@ -1,4 +1,4 @@
-name: Auto_push_docker_image_lab3
+name: Auto_push_docker_image
 
 on:
   push: #сценарий должен запускать при пуше в ветку main
