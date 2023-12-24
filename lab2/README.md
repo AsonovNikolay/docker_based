@@ -43,17 +43,28 @@ The source code contains a microservice application, written in spring boot. Thi
 
 To access end-points use curl
 
-To save Product 
-`curl --location --request POST 'localhost:81/products/' \
---header 'Content-Type: application/json' \
---header 'userId: abc@xyz.com' \
---data-raw '{
-"name": "Apple iPhone 12",
-"description": "Apple iPhone 12 Pro Max 128 GB, Pacific Blue",
-"price": 1700
-}'`
+To save Product  
+> curl --location --request POST 'localhost:81/products/' \
+> --header 'Content-Type: application/json' \
+> --header 'userId: abc@xyz.com' \
+> --data-raw '{
+> "name": "Apple iPhone 12",
+> "description": "Apple iPhone 12 Pro Max 128 GB, Pacific Blue",
+> "price": 1700
+> }'
 
 To get Product
 
-`curl --location --request GET 'localhost:81/products/f02172fc-4bd6-44e1-869e-3bf3d0e35bd8' \
+`curl --location --request GET 'localhost:81/products/{product_id}' \
 --data-raw ''`
+
+
+Посмотрим на работу эндпоинтов  
+Добавим продукт  
+![изображение](https://github.com/AsonovNikolay/docker_based/assets/71010958/3250c1f9-1097-43ac-b930-3305730a4c2c)
+
+
+Получим инфу о продукте  
+![изображение](https://github.com/AsonovNikolay/docker_based/assets/71010958/0d8737c3-8a91-4570-b8c0-63ad16996488)
+
+
