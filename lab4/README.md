@@ -91,7 +91,7 @@ minikube service grafana-np
 
 ![изображение](./assets/step12.jpg)
 
-Теперь скопируем ip этой Dashboards и получим следующий результат.
+Теперь скопируем id этой Dashboards и получим следующий результат.
 
 ![изображение](./assets/step13.jpg)
 
